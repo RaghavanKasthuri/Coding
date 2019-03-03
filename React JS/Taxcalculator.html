@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>Basic Tax calculation 2018/19</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+  </head>
+  <body>
+
+<h2>Basic Tax calculation 2018/19</h2>
+Pay from employment <input type=text name="pay" id ="pay" value="20000">
+<br><br>
+Dividend from Ltd Company <input type=text name="dividend" id="dividend" value="20000">
+<br><br>
+
+<input type="submit">
+<br><br>
+
+<div id="container">
+</div>
+
+<br><br>
+
+    <script src="../shared/thirdparty/es5-shim.min.js"></script>
+    <script src="../shared/thirdparty/es5-sham.min.js"></script>
+    <script src="../shared/thirdparty/console-polyfill.js">   	</script>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/JSXTransformer.js"></script>
+    <script type="text/jsx">
+      /**
+       * @jsx React.DOM
+       */
+
+      var ExampleApplication = React.createClass({
+		//handleSubmit: function()	{
+		//return 'Hello';
+		//}
+		render: function() {
+		var pay = document.getElementById("pay");
+		var dividend = document.getElementById("dividend");
+		var payValue = parseInt(pay.value,10);
+		var dividendValue = parseInt(dividend.value,10);
+		
+     		const total = payValue + dividendValue;
+     		var message = 
+            'Tax to pay = ' + (total)*.2;
+          return <b>{message}</b>;
+        }	   
+      });
+
+        React.renderComponent(
+          <ExampleApplication />,
+          document.getElementById('container')
+        );
+      
+    </script>
+    <script type="text/jsx">
+      /**
+       * @jsx React.DOM
+       */
+      var handleSubmit = React.createClass({
+        handleSubmit: function() {
+
+	var pay = document.getElementById("pay");
+	var dividend = document.getElementById("dividend");
+	var payValue = parseInt(pay.value,10);
+	var dividendValue = parseInt(dividend.value,10);
+		
+
+     const total = payValue + dividendValue;
+     var message = 
+            'To pay = ' + (total)*.2;
+
+          return <b>{message}</b>;
+
+        React.renderComponent(
+          <handleSubmit />,
+          document.getElementById('container')
+);
+</script>
+
+  </body>
+</html>
