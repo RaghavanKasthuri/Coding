@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
+</head>
+
+<body> 
+<form action="inputvehicledetails.html" method="get">
+<br>
+<p class="a"> <b> Enter your login details </b>
+<br><br><br>
+
+User Name: <input type="text" 
+     value="" id="userName">
+<br><br>
+ 
+Password:  <input type="password" 
+     value="" id="userPassword">
+<br><br>
+<input type="checkbox" onclick="Toggle()"> 
+     Show Password  
+<br><br><br>
+<input type="button" class="button" value="Submit" onclick="callMe()">
+<br></p>
+
+    <script> 
+    	
+	// Toggle between show and hide password based on user input
+        function Toggle() 
+	{ 
+		var textOrPassword = document.getElementById("userPassword"); 
+            	if (textOrPassword.type === "password") { 
+                	textOrPassword.type = "text"; 
+            	} 
+            	else { 
+                	textOrPassword.type = "password"; 
+            	} 
+        } 
+	
+function callMe()
+{
+location.href = "inputvehicledetails.html"
+}
+
+</script> 
+</body> 
+</html> 

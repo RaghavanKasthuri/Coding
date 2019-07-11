@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
+</head>
+
+<body> 
+
+<br>
+<p class="a"> <b> Enter vehicle details </b>
+<br><br>
+
+Vehicle Price: <input type="text" 
+     value="" id="vehiclePrice">
+<br><br>
+ 
+Deposit Amount:  <input type="text" 
+     value="" id="depositAmount">
+<br><br>
+
+Delivery Date:  <input type="date" 
+     value="" id="deliveryDate">
+<br><br>
+
+Finance Options: 
+<select>
+  <option value="1 year">1 year</option>
+  <option value="2 years">2 years</option>
+  <option value="3 years">3 years</option>
+</select>
+<br><br>
+Submit application & retrieve quote.
+<br><br><br>
+
+<input type="button" class="button" value="Submit" onclick="pingMe()">
+<br></p>
+
+<script> 
+    	
+function pingMe()
+{
+location.href = "top6vehicles.html"
+}
+
+</script> 
+</body> 
+</html>
