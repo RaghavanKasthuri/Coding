@@ -1,0 +1,133 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+<form>
+<br><br><br>
+<div class="sub">
+<div class="container">
+<font size="4" face="Arial" color="grey">
+<h3> Vending Machine </h3></font>
+<font size="4" face="Arial" color="grey">
+<font size="4" face="Arial" color="green">
+<h4><font size="4" face="Arial" color="grey">Please enter the quantity of products to buy. Example: 1 pepsi and 1 soda</h4>
+<table>
+<td>
+<label>
+Pepsi (35 Cents)
+</label>
+<input type="text" size="5" name="pepsi" id="pepsi">
+<td><td><td><td><td><td><td><td><td><td><td><td>
+<label>
+Coke (25 Cents)
+</label>
+<input type="text" size="5" name="coke" id="coke">
+<td><td><td><td><td><td><td><td><td><td><td><td>
+<label>
+Soda (45 Cents)
+</label>
+<input type="text" size="5" name="soda" id="soda">
+</tr>
+</table>
+<br>
+<font size="4" face="Arial" color="grey">
+<h4> Please insert coins to pay. Example: Entering 10 in the box next to 1 Cent means 10 X 1 cent coins.</h4>
+<table>
+<tr>
+<td>
+<label>
+1 Cent
+</label>
+<input type="text" size="5" name="1cent" id="1cent">  
+<td><td><td><td><td><td><td><td><td><td><td><td>
+<label>
+5 Cents
+</label>
+<input type="text" size="5" name="5cent" id="5cent">
+<td><td><td><td><td><td><td><td><td><td><td><td>
+<label>
+10 Cents
+</label>
+<input type="text" size="5" name="10cent" id="10cent">  
+<td><td><td><td><td><td><td><td><td><td><td><td>
+<label>
+25 Cents
+</label>
+<input type="text" size="5" name="25cent" id="25cent">
+</tr>
+</table>
+<br><br><table>
+<tr>
+<td><div id="root"></div>
+<td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td>
+<td><div id="err"</div>
+</tr>
+</table>
+</font>
+</div></div>
+<br/>  
+
+</form>
+</body>
+<script type="text/babel">
+	function vendingMachine() {
+		
+		
+		var noCoke = document.getElementById ('coke').value;
+		var noPepsi = document.getElementById ('pepsi').value;
+  		var noSoda = document.getElementById ('soda').value;
+
+		var no1cent = document.getElementById ('1cent').value;
+		var no5cent = document.getElementById ('5cent').value;
+  		var no10cent = document.getElementById ('10cent').value;
+  		var no25cent = document.getElementById ('25cent').value;
+  		
+		const date = new Date().toLocaleTimeString();
+		
+		var totalProducts = (noSoda*1) + (noPepsi*1) + (noCoke*1);
+		var totalPrice = (noSoda*1*.45) + (noPepsi*1*.35) + (noCoke*1*.25);
+		totalPrice = Math.round( totalPrice * 100 + Number.EPSILON ) / 100;
+		var priceRemaining = totalPrice - ((no1cent*.01) + (no5cent*.05) + (no10cent*.10) + (no25cent*.25));
+		priceRemaining = Math.round( priceRemaining * 100 + Number.EPSILON ) / 100;
+  		
+  		const element = (
+    				<div><font size="4" face="Arial" color="grey">
+      				<h4> {totalProducts} Products selected</h4>
+      				<p>Pepsi = {noPepsi} X 35 cents</p>
+      				<p>Coke = {noCoke} X 25 cents</p>
+      				<p>Soda = {noSoda} X 45 cents</p></font>
+				<font size="4" face="Arial" color="green">
+				<p>Total price to pay = ${totalPrice} </p></font>
+				</div>
+  				);
+
+  		const toPay = (
+    				<div>
+      				<h4><font color="red">Remaining to pay as you insert the coins = {priceRemaining}</font></h4>
+    				</div>
+  				);
+
+		const toCollect = (
+    				<div>
+      				<h4><font color="green">Please collect the drinks and the change {priceRemaining}</font></h4>
+    				</div>
+  				);
+   
+  		if (totalProducts > 0) {
+  			ReactDOM.render(element, document.getElementById('root'));
+			if (priceRemaining > 0) {
+				ReactDOM.render(toPay, document.getElementById('err'));
+			} else {
+				ReactDOM.render(toCollect, document.getElementById('err'));
+			}
+  		}   
+	}
+
+	setInterval(vendingMachine, 1000);
+
+</script>
+</html>
