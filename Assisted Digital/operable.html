@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<p><b>Operable - Work Example</b></p>
+
+<p>Please click the following work example link for code prototype</p>
+
+<a href="operable1.html"> <font face="verdana">Work Example: Save and continue later preventing data loss </font></a>
+
+<br><br>
+
+<p>The above work example is an elaboration of the WCAG2.1 guideline about enough time, time outs and save and continue later </p>
+
+<a href="https://www.w3.org/TR/WCAG21/#enough-time"><font face="verdana">Enough Time & WCAG2.1</font></a>  
+
+<br><br>
+<p> Benefits </p>
+<ul>
+<li><font face="verdana">People with physical disabilities often need more time to react, to type and to complete activities. People with low vision need more time to locate things on screen and to read. People who are blind and using screen readers may need more time to understand screen layouts, to find information and to operate controls. People who have cognitive or language limitations need more time to read and to understand. People who are deaf and communicate in sign language may need more time to read information printed in text (which may be a second language for some).</font></li>
+<li><font face="verdana">In circumstances where a sign-language interpreter may be relating audio content to a user who is deaf, control over time limits is also important.</font></li>
+<li><font face="verdana">People with reading disabilities, cognitive limitations, and learning disabilities who may need more time to read or comprehend information can have additional time to read the information by pausing the content.</font></li>
+</ul>
+<br>
+</div>
+
+{% endblock %}
+
+
+
+
+

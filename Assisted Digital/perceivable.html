@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<p><b>Perceivable - Work Example</b></p>
+
+<p>Please click the following work example link for code prototype</p>
+
+<a href="perceivable1.html"><font face="verdana"> Work Example: Text Alternatives for making information accessible </font></a>
+
+<br><br>
+
+<p>The above work example is an elaboration of the WCAG2.1 guideline about text alternatives making information accessible because they can be rendered through any sensory modality (for example, visual, auditory or tactile)</p> 
+
+<a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html#examples"><font face="verdana">Text Alternatives & WCAG2.1</font></a> <br><br>
+
+<p>Alternative text is achieved by the alt section of the below HTML tag </p>
+
+<font face= "verdana"> &#60;img src="pmhandshake.jpeg" <font color=blue>alt="President Donald Trump and Australian Prime Minister Scott Morrison shake hands"</font> width="500" height="333"&#62;
+
+<br><br>
+<p> Benefits </p>
+<ul>
+<li><font face="verdana">helps people who have difficulty perceiving visual content. Assistive technology can read text aloud, present it visually, or convert it to braille.</font></li>
+<li><font face="verdana">Text alternatives may help some people who have difficulty understanding the meaning of photographs, drawings, and other images (e.g., line drawings, graphic designs, paintings, three-dimensional representations), graphs, charts, animations, etc. </li>
+<li><font face="verdana">People who are deaf, are hard of hearing, or who are having trouble understanding audio information for any reason can read the text presentation. Research is ongoing regarding automatic translation of text into sign language.</li>
+<li><font face="verdana">People who are deaf-blind can read the text in braille.</li>
+<li><font="verdana">Additionally, text alternatives support the ability to search for non-text content and to repurpose content in a variety of ways.</li></font>
+</ul>
+<br>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

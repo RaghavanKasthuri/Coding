@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<p><b>WORK EXAMPLES</b></p>
+<p>While building accessible online services, the following guidelines were followed on projects </p>
+<p><b>1) Web Content Accessibility Guidelines WCAG2.1</b></p>
+      <p>Please click the below links for work examples adhering to WCAG2.1 principles of</p>
+      <ul class="govuk-list govuk-list--bullet">
+	<li> <a href="perceivable.html"> Perceivable </a> </li>
+	<li> <a href="operable.html"> Operable </a> </li>
+	<li> <a href="understandable.html"> Understandable </a> </li>
+	<li> <a href="robust.html"> Robust </a> </li>
+      </ul>
+      <br>
+<p><b>2) Semantic coding for building accessible services</b></p>
+<ul class="govuk-list govuk-list--bullet">
+<li> Referred to the following websites<br>
+<a href="https://24ways.org/2017/accessibility-through-semantic-html">Accessibility through semantic html</a><br>
+<a href="https://html.com/semantic-markup">Semantic Markup</a>
+</li>
+<li> Hypertext Markup Language HTML for displaying content
+</li>
+<li> Cascading style sheets for look and feel of the site </li>
+<li> The hypothesis is such that keeping HTML tags for displaying content makes it easier for assistive technologies to pick up the relevant html tags to announce it to the end users who use assistive technologies. I haven't tested this with any assitive technologies till date but the hypothesis is based on discussions during team meetings on projects and reading through articles in free time.</li>
+<li> The assistive technologies considered in scope were that of Dragon Speaking Software, Screen Readers, Screen Magnifiers, and Speech browsers </li>
+</ul>
+</div>
+
+{% endblock %}
+
+
+

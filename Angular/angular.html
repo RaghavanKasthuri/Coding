@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="mystyle.css">
+<body>
+<br><br><br>
+<div ng-app="myApp" ng-controller="taxcalculatorCtrl">
+
+<font size="4" face="Arial" color="black">
+<div class="sub">
+<div class="container">
+<h2> Tax calculator </h2>
+First Name: <input type="text" ng-model="firstName"><br><br>
+Last Name: <input type="text" ng-model="lastName"><br><br>
+National Insurance Number: <input type="text" ng-model="nino"><br><br>
+Gross earnings during 2019/20: <input type="text" ng-model="earnings"><br><br>
+
+<h2> Tax calculation</h2>
+{{taxCalculation()}} <br>
+</div>
+</div></font>
+</div>
+
+
+<script>
+var app = angular.module('myApp', []);
+  app.controller('taxcalculatorCtrl', function($scope) {
+    $scope.taxCalculation = function() {
+    var taxfreeallowance = 12500;
+    var earning1 = $scope.earnings - taxfreeallowance;
+    if ($scope.earnings < 12500) { 
+  	var yourtax = "Tax = 0% X £" + $scope.earnings + " = £" + 0;
+  	} else if (earning1 > 0 && earning1 <37501) {
+  	var tax = earning1*.2;
+    var yourtax = "Tax = (0% X £12500) + (20% X " + earning1 + ") = £" + tax;
+  	} else if (earning1 > 37501 && earning1 < 200001) {
+  	var tax = (37500 *.2) + ((earning1 - 37500)*.4);
+  	var yourtax = "Tax = (0% X £12500) + (20% X £37500) + (40% X £" + (earning1-37500) + ") = £" + tax; 
+  	} else if (earning1 > 200001) {
+  var tax = (37500 *.2) + (150000*.4) + (($scope.earnings-200000)*.45);
+  var yourtax = "Tax = (0% X £12500) + (20% X £37500) + (40% X £150000) + (45% X £" + ($scope.earnings-200000) + ") = £" + tax; 
+  }
+    return yourtax;
+    };
+});
+</script>
+
+</body>
+</html>

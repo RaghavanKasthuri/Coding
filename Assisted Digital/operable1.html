@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+<br>
+<br><br><br>
+<h1 class="govuk-heading-xl">
+      Part 1: About You      </h1>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="one-half">
+  Firstname
+  </label>
+  <div id="nino_error" class="govuk-error-message"></div>
+  <input class="govuk-input govuk-!-width-one-half" id="nino" name="nino" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="one-half">
+  Surname
+  </label>
+  <div id="nino_error" class="govuk-error-message"></div>
+  <input class="govuk-input govuk-!-width-one-half" id="nino" name="nino" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="one-half">
+    National Insurance Number
+  </label>
+  <div id="nino_error" class="govuk-error-message"></div>
+  <input class="govuk-input govuk-!-width-one-half" id="nino" name="nino" type="text">
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue later
+</button>
+
+
+
+{% endblock %}
