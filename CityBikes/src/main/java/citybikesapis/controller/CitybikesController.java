@@ -23,6 +23,8 @@ import citybikesapis.model.Network;
 import citybikesapis.model.Root;
 import citybikesapis.controller.CitybikesRestController;
 
+/** Controller class for displaying the list of all citibikes in the world by calling Citybikes API **/
+
 @Controller
 @RequestMapping("/citybikes")
 public class CitybikesController {
